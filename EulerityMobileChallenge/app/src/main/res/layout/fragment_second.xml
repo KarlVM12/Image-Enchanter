@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment">
+
+    <ImageView
+        android:id="@+id/editImageView"
+        android:layout_width="368dp"
+        android:layout_height="334dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="124dp"
+        android:layout_height="56dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="124dp"
+        android:layout_height="56dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/enchanted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enchantedAndUploaded"
+        android:textAppearance="@style/titleFont"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/editImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/editLinearLayout"
+        android:layout_width="399dp"
+        android:layout_height="218dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editImageView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!--filters button-->
+        <LinearLayout
+            android:id="@+id/editLinearLayoutVerticalOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/filter_button"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="32dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#333F51B5"
+                android:src="@mipmap/filter"
+                app:layout_constraintEnd_toStartOf="@+id/text_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editImageView" />
+
+            <TextView
+                android:id="@+id/filter_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filters"
+                android:textAppearance="@style/editButtons"
+                app:layout_constraintEnd_toEndOf="@+id/filter_button"
+                app:layout_constraintStart_toStartOf="@+id/filter_button"
+                app:layout_constraintTop_toBottomOf="@+id/filter_button" />
+        </LinearLayout>
+
+        <!--text button-->
+        <LinearLayout
+            android:id="@+id/editLinearLayoutVerticalTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/text_button"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="32dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#333F51B5"
+                android:src="@mipmap/text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editImageView" />
+
+            <TextView
+                android:id="@+id/text_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_text"
+                android:textAppearance="@style/editButtons"
+                app:layout_constraintEnd_toEndOf="@+id/text_button"
+                app:layout_constraintStart_toStartOf="@+id/text_button"
+                app:layout_constraintTop_toBottomOf="@+id/text_button" />
+        </LinearLayout>
+
+        <!--colors button-->
+        <LinearLayout
+            android:id="@+id/editLinearLayoutVerticalThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/colors_button"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="32dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#333F51B5"
+                android:src="@mipmap/colors"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_button"
+                app:layout_constraintTop_toBottomOf="@+id/editImageView" />
+
+            <TextView
+                android:id="@+id/colors_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/colors"
+                android:textAppearance="@style/editButtons"
+                app:layout_constraintEnd_toEndOf="@+id/colors_button"
+                app:layout_constraintStart_toStartOf="@+id/colors_button"
+                app:layout_constraintTop_toBottomOf="@+id/colors_button" />
+        </LinearLayout>
+
+        <!-- Filters layout selected -->
+        <LinearLayout
+            android:id="@+id/filterLayoutSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/filterSelectedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filters"
+                android:textAppearance="@style/editButtons"
+                android:textSize="35sp" />
+
+            <!--layout of different filters to choose-->
+            <LinearLayout
+                android:id="@+id/filterLayoutSelectedDifferentFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/filterGrayscale"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/grayscale" />
+
+                <ImageButton
+                    android:id="@+id/filterCartoon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/cartoon" />
+
+                <ImageButton
+                    android:id="@+id/filterSepia"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/sepia" />
+
+                <ImageButton
+                    android:id="@+id/filterSwirl"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/swirl" />
+
+                <ImageButton
+                    android:id="@+id/filterKuwahara"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/kuwahara" />
+
+            </LinearLayout>
+
+            <!--apply or cancel button layout-->
+            <LinearLayout
+                android:id="@+id/filterLayoutSelectedApplyCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/applyButton"
+                    android:layout_width="124dp"
+                    android:layout_height="66dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/apply" />
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="124dp"
+                    android:layout_height="66dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/cancel" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Text layout selected -->
+        <LinearLayout
+            android:id="@+id/textLayoutSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textSelectedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_text"
+                android:textAppearance="@style/editButtons"
+                android:textSize="35sp" />
+
+            <!--Edit Text Linear Layout-->
+            <LinearLayout
+                android:id="@+id/textEditLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textColon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textColon"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+
+            <!--x and y coords layout-->
+            <LinearLayout
+                android:id="@+id/xyCoordsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/xCoordTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xCoordColon"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/xCoordEdit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/yCoordTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yCoordColon"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/yCoordEdit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/textSizeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textSize"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="30sp" />
+
+                <EditText
+                    android:id="@+id/textSizeEdit"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="30" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addTextButtonInside"
+                android:layout_width="124dp"
+                android:layout_height="38dp"
+                android:text="@string/add_text" />
+
+            <!--apply or cancel button layout-->
+            <LinearLayout
+                android:id="@+id/textLayoutSelectedApplyCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/applyButton1"
+                    android:layout_width="124dp"
+                    android:layout_height="38dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/apply" />
+
+                <Button
+                    android:id="@+id/cancelButton1"
+                    android:layout_width="124dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/cancel" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Colors layout selected -->
+        <LinearLayout
+            android:id="@+id/colorsLayoutSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!--<TextView
+                android:id="@+id/colorsSelectedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/colors"
+                android:textAppearance="@style/editButtons"
+                android:textSize="35sp" />-->
+
+            <!-- Brightness Entry -->
+            <LinearLayout
+                android:id="@+id/brightnessLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/brightnessInputValueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/brightnessValue"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/brightnessInputValue"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="50" />
+
+                <ImageButton
+                    android:id="@+id/brightnessApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/checkbox_on_background" />
+
+            </LinearLayout>
+
+            <!-- Contrast Entry -->
+            <LinearLayout
+                android:id="@+id/contrastLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/contrastInputValueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contrastValue"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/contrastInputValue"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="50" />
+
+                <ImageButton
+                    android:id="@+id/contrastApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/checkbox_on_background" />
+
+            </LinearLayout>
+
+            <!-- Blur Entry -->
+            <LinearLayout
+                android:id="@+id/blurLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/blurInputValueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blurValue"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/blurInputValue"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="0" />
+
+                <ImageButton
+                    android:id="@+id/blurApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/checkbox_on_background" />
+
+            </LinearLayout>
+
+            <!-- Tint Entry -->
+            <LinearLayout
+                android:id="@+id/tintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tintInputValueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tintColon"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/redTintLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/redColon"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/redTintValue"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/greenTintLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/greenColon"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/greenTintValue"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/blueTintLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blueColon"
+                    android:textAppearance="@style/editButtons"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/blueTintValue"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="0" />
+
+                <ImageButton
+                    android:id="@+id/tintApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/checkbox_on_background" />
+
+            </LinearLayout>
+
+            <!--apply or cancel button layout-->
+            <LinearLayout
+                android:id="@+id/colorsLayoutSelectedApplyCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/applyButton2"
+                    android:layout_width="100dp"
+                    android:layout_height="38dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/apply"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/cancelButton2"
+                    android:layout_width="100dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/cancel"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

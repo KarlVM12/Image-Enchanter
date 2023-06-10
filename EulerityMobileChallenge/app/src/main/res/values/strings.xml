@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Image Enchanter</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Cool Beans</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="choose_image">Choose an Image:</string>
+    <string name="back">Back to Images</string>
+    <string name="save">Save and Upload</string>
+    <string name="filters">Filters</string>
+    <string name="add_text">Add Text</string>
+    <string name="colors">Colors</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="textColon">"Text: "</string>
+    <string name="xCoordColon">X:</string>
+    <string name="yCoordColon">Y:</string>
+    <string name="valueColon">"Value (0-100): "</string>
+    <string name="brightnessValue">"Brightness Value (0-100): "</string>
+    <string name="contrastValue">"Contrast Value (0-100): "</string>
+    <string name="blurValue">"Blur Value (0-100): "</string>
+    <string name="tintColon">"Tint: "</string>
+    <string name="redColon">"Red"</string>
+    <string name="greenColon">Green</string>
+    <string name="blueColon">Blue</string>
+    <string name="textSize">"Text Size: "</string>
+    <string name="enchantedAndUploaded">Enchanted!
+        Image Uploaded!</string>
+</resources>

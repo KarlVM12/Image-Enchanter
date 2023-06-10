@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="choose_image_top_constraint">100dp</dimen>
+</resources>
